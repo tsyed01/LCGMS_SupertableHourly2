@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PROJ_Supertabe_Database_ConnectionString"
+  DTS:DTSID="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::Supertabe_Database_ConnectionString]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=ES11VdSINFSQL01;User ID=lcgmsappuser;Initial Catalog=Supertable;Provider=SQLNCLI11;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAtMe6b6TwU2Mv7KRLcMEfgAAAAACAAAAAAADZgAAwAAAABAAAAAX9WmUsWscB/656TxsDR5BAAAAAASAAACgAAAAEAAAADg79S4KWHzwbSfPi0/U+/R4AAAARk7sc6PjNDMb9KhcsI6O7BTxecf1KKEx3BwDk5wxeWkDlT1fBiCQZb8UY2Q6OmwRV3nKPOKTHyAHIRv4Mvx9D/t9H9gmzNWVVoM8mtML8Vi95Kw1/jjL+AwpZQ/GvmLkEn/SQ4W0CBEvr2ZI2Jc7TGCZHAhJD5NGFAAAAL5hF53GRBm6hNMU7PuNlVNvFO3o</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

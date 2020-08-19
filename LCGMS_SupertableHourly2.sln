@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "LCGMS_SupertableHourly2", "LCGMS_SupertableHourly2\LCGMS_SupertableHourly2.dtproj", "{3227E0F1-54AA-46CD-8260-AE8DB55AE60B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3227E0F1-54AA-46CD-8260-AE8DB55AE60B}.Development|Default.ActiveCfg = Development
+		{3227E0F1-54AA-46CD-8260-AE8DB55AE60B}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BA76C79-46A6-4F51-A257-B7550B2BC85D}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://dvapp18:8080/tfs/diit
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = LCGMS_SupertableHourly2\\LCGMS_SupertableHourly2.dtproj
+		SccProjectName1 = LCGMS_SupertableHourly2
+		SccLocalPath1 = LCGMS_SupertableHourly2
+	EndGlobalSection
+EndGlobal

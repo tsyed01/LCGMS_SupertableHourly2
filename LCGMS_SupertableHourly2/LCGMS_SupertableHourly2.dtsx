@@ -1,0 +1,2481 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/25/2016 2:37:13 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="335DPC597"
+  DTS:CreatorName="OWS\tsyed"
+  DTS:DTSID="{FACE846E-96D4-4F21-B575-A5A8B1120604}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LCGMS_SupertableHourly2"
+  DTS:PackageType="5"
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{4A2AF664-703C-4F80-BE77-7734DAFB433B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LCGMS_SupertableHourly2_FlatFileConnectionManager1]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="LCGMS_SupertableHourly2_FlatFileConnectionManager1"
+      DTS:DTSID="{D86B9961-41AF-4A0F-BFD7-BE1605A158B9}"
+      DTS:ObjectName="LCGMS_SupertableHourly2_FlatFileConnectionManager1">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::LCGMS_SupertableHourly2_FlatFileConnectionManager1]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\ES11VDMDWSQL01\\ETL_Scripts\BatchProcessing\LCGMS\FILES\LCGMS_SupertableHourly2\LCGMS_SupertableHourly_Mail.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="31"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ALLFileData"
+              DTS:DTSID="{BBFB8DE8-1B46-4A89-9C3D-421206A73E72}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="11"
+      DTS:DTSID="{6A7EA137-D620-42BF-87AD-FC393982DD8B}"
+      DTS:ObjectName="FlatFileConnectionManager1_AlwaysCheckForRowDelimiters">
+      <DTS:Property
+        DTS:DataType="11"
+        DTS:Name="ParameterValue">-1</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{5A28B7FB-7AA9-4552-949B-4E3F6661775F}"
+      DTS:ObjectName="LCGMS_SupertableHourly2_FinalStepSupertablesAreSuccessfullyUpdated_ToLine">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">tsyed@schools.nyc.gov</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{4420F6B3-631E-4A4C-B398-89287B0570F2}"
+      DTS:ObjectName="LCGMS_SupertableHourly2_FlatFileConnectionManager1">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">\\ES11VDMDWSQL01\\ETL_Scripts\BatchProcessing\LCGMS\FILES\LCGMS_SupertableHourly2\LCGMS_SupertableHourly_Mail.txt</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{539261C5-BC6D-4170-947C-5D4398379F87}"
+      DTS:ObjectName="LCGMS_SupertableHourly2_SqlDatabaseServer">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">ES11VdSINFSQL01</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{EDEE1799-94C4-4F54-878D-561EE26B7A96}"
+      DTS:ObjectName="PROJ_Supertabe_Database_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Data Source=ES11VdSINFSQL01;User ID=lcgmsappuser;Password=welcome;Initial Catalog=Supertable;Provider=SQLNCLI11;Persist Security Info=True;Auto Translate=False;</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{316E0271-CE8D-4719-A994-0B0D17CD5748}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::FlatFileConnectionManager1_AlwaysCheckForRowDelimiters]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FlatFileConnectionManager1_AlwaysCheckForRowDelimiters">
+      <DTS:VariableValue
+        DTS:DataType="11">-1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D154B47D-460D-4D7C-BCDB-79BF07611E59}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::LCGMS_SupertableHourly2_FinalStepSupertablesAreSuccessfullyUpdated_ToLine]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LCGMS_SupertableHourly2_FinalStepSupertablesAreSuccessfullyUpdated_ToLine">
+      <DTS:VariableValue
+        DTS:DataType="8">tsyed@schools.nyc.gov</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{488FB467-4868-4184-89E2-F55565C17EEE}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::LCGMS_SupertableHourly2_FlatFileConnectionManager1]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LCGMS_SupertableHourly2_FlatFileConnectionManager1">
+      <DTS:VariableValue
+        DTS:DataType="8">\\ES11VDMDWSQL01\\ETL_Scripts\BatchProcessing\LCGMS\FILES\LCGMS_SupertableHourly2\LCGMS_SupertableHourly_Mail.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{51462A25-E648-4E53-96A6-66244C50BE2C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LCGMS_SupertableHourly2_GetCurrentDateTime">
+      <DTS:VariableValue
+        DTS:DataType="7">5/26/2016 11:52:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2C43514D-4222-4D24-A457-BC374A6DF110}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LCGMS_SupertableHourly2_NumberOfRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EAF4B5FF-F5DD-419B-8F67-84A1072E5490}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LCGMS_SupertableHourly2_SqlDatabaseServer">
+      <DTS:VariableValue
+        DTS:DataType="8">ES11VdSINFSQL01</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F4625CE5-CC85-4F3F-B0EA-AEDCFB0D08C7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LCGMS_SupertableHourly2_SwitchKey">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2A9B66E3-3940-4C9B-9E8E-32FD27C65046}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::PROJ_Supertabe_Database_ConnectionString]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PROJ_Supertabe_Database_ConnectionString">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=ES11VdSINFSQL01;User ID=lcgmsappuser;Password=welcome;Initial Catalog=Supertable;Provider=SQLNCLI11;Persist Security Info=True;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1870A65B-4B62-43CB-A383-D8059B4994B5}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::PROJ_SMTPConnectionManager_ConnectionString]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SMTPConnectionManager_ConnectionString">
+      <DTS:VariableValue
+        DTS:DataType="8">SmtpServer=NYCBOEMAILSERVER1;UseWindowsAuthentication=False;EnableSsl=False;</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL ROLLBACK Step10"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL ROLLBACK Step10"
+      DTS:DTSID="{fb0279fe-c3ca-4738-b8c4-a70ced20bbe7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL ROLLBACK Step10"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="9">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Rollback_LastHours_Transaction" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:DtsVariableName="User::LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL ROLLBACK Step15"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL ROLLBACK Step15"
+      DTS:DTSID="{88d5a47f-6e6b-40d9-8d82-aa3e75240d0a}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL ROLLBACK Step15"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="7">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Rollback_LastHours_Transaction" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:DtsVariableName="User::LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL ROLLBACK Step25"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL ROLLBACK Step25"
+      DTS:DTSID="{61868f10-9016-4479-9a88-a2edf9f0b8b5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL ROLLBACK Step25"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="8">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Rollback_LastHours_Transaction" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL ROLLBACK Step30"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL ROLLBACK Step30"
+      DTS:DTSID="{1bbb1812-8e07-48eb-a2ad-d271cdccef83}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL ROLLBACK Step30"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="6">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Rollback_LastHours_Transaction" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:DtsVariableName="User::LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL ROLLBACK Step35"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL ROLLBACK Step35"
+      DTS:DTSID="{7684eae0-bc47-455c-adab-138fded74159}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL ROLLBACK Step35"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="5">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Rollback_LastHours_Transaction" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:DtsVariableName="User::LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL ROLLBACK Step40"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL ROLLBACK Step40"
+      DTS:DTSID="{6c547495-3b9a-4a3b-b8f7-309c63a71df5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL ROLLBACK Step40"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Rollback_LastHours_Transaction" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:DtsVariableName="User::LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL ROLLBACK Step45"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL ROLLBACK Step45"
+      DTS:DTSID="{13524fe7-a839-4496-8010-554238d9e1d1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL ROLLBACK Step45"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Rollback_LastHours_Transaction" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:DtsVariableName="User::LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL ROLLBACK Step50"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL ROLLBACK Step50"
+      DTS:DTSID="{92f187f7-7c28-4ad1-8f35-66a90a2cc652}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL ROLLBACK Step50"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Rollback_LastHours_Transaction" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:DtsVariableName="User::LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL ROLLBACK Step55"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL ROLLBACK Step55"
+      DTS:DTSID="{3c63695c-7833-4077-98f1-4b1a1171067e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL ROLLBACK Step55"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Rollback_LastHours_Transaction" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:DtsVariableName="User::LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL ROLLBACK Step60"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL ROLLBACK Step60"
+      DTS:DTSID="{17780495-6162-4ab1-bdec-2c615ad611f5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL ROLLBACK Step60"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Rollback_LastHours_Transaction" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:DtsVariableName="User::LCGMS_SupertableHourly2_GetCurrentDateTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Final Step Supertables Are Successfully Updated"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Final Step Supertables Are Successfully Updated1"
+      DTS:DTSID="{8937be9c-9869-4920-b22d-888bacbb5fef}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Final Step Supertables Are Successfully Updated"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Final Step Supertables Are Successfully Updated in Step60 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ToLine">@[$Package::LCGMS_SupertableHourly2_FinalStepSupertablesAreSuccessfullyUpdated_ToLine]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2@schools.nyc.gov"
+          SendMailTask:To="tsyed@schools.nyc.gov"
+          SendMailTask:Subject="Final Step Supertables Are Successfully Updated in Step60 - ES11VdSINFSQL01"
+          SendMailTask:MessageSourceType="FileConnection"
+          SendMailTask:MessageSource="LCGMS_SupertableHourly2_FlatFileConnectionManager1" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Email Task Step 35 Failed Update Process Message"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Email Task Step 35 Failed Update Process Message"
+      DTS:DTSID="{f5431925-e19c-4d50-a810-14e08ce8a369}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Email Task Step 35 Failed Update Process Message"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="5">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Execution Failed &amp; Roll backed successfully occur in " + "Step35 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2a@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="Execution Failed &amp; Roll backed successfully occur in Step35 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Execution Failed For SP Supertable.dbo.usp_Supertbl_Update_Process" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Step 01 - System is previously busy &amp; Successfully Exit Out"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task Step 01 - System is previously busy &amp; Successfully Exit Out"
+      DTS:DTSID="{76dcfb5a-d7dd-4b36-b8b2-d9adfa2efdef}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Step 01 - System is previously busy &amp; Successfully Exit Out"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="10">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"System is previously busy &amp; Exit Out in " + "Step01 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="System is previously busy &amp; Exit Out in Step01 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Currently, the system is busy by SSIS Job or Datastage job. This Job Is Exiting Out in Step01." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Step 01 Problem Reading TS_Switch Process"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task Step 01 Problem Reading TS_Switch Process"
+      DTS:DTSID="{A742D3BB-8758-4D5E-B3F0-303EEB12E8E4}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Step 01 Problem Reading TS_Switch Process"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="11">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Problem Reading TS_Switch Process in " + "Step01 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2a@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="Problem Reading TS_Switch Process in Step01 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Execution Failed &amp; Roll backed successfully occur in Step10 for the SP Supertable.dbo.usp_Supertbl_Extract_Rows_For_Current_FY" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Step 10 Problem In Supertable Current Extract Process"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task Step 10 Problem In Supertable Current Extract Process"
+      DTS:DTSID="{68543fef-b47a-4489-a666-27ea1d4e6a3b}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Step 10 Problem In Supertable Current Extract Process"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="9">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Execution Failed &amp; Roll backed successfully occur in " + "Step10 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2a@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="Execution Failed &amp; Roll backed successfully occur in Step10 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Execution Failed &amp; Roll backed successfully occur in Step10 for the SP Supertable.dbo.usp_Supertbl_Extract_Rows_For_Current_FY" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Step 15 Problem In Supertable Extract Next Process"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task Step 15 Problem In Supertable Extract Next Process"
+      DTS:DTSID="{b09d8910-22c5-4b44-b175-ff65118bc517}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Step 15 Problem In Supertable Extract Next Process"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="7">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Execution Failed &amp; Roll backed successfully occur in " + "Step15 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2a@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="Execution Failed &amp; Roll backed successfully occur in Step15 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Execution Failed &amp; Roll backed successfully occur in Step15 for the SP Supertable.dbo.usp_Supertbl_Extract_Rows_For_Next_FY" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Step 25 Problem Execute Delete Rows"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task Step 25 Problem Execute Delete Rows"
+      DTS:DTSID="{3a295e6b-3057-41b3-9b67-26bf67185913}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Step 25 Problem Execute Delete Rows"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="8">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Execution Failed &amp; Roll backed successfully occur in " + "Step25 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2a@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="Execution Failed &amp; Roll backed successfully occur in Step25 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Message Source: Problem Execute Delete Rows..." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Step 30 Problem In Supertable Extract Process"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task Step 30 Problem In Supertable Extract Process"
+      DTS:DTSID="{62d18765-73f1-48ea-b86b-94431c4f6845}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Step 30 Problem In Supertable Extract Process"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="6">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Execution Failed &amp; Roll backed successfully occur in " + "Step30 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2a@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="Execution Failed &amp; Roll backed successfully occur in Step30 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Execution Failed &amp; Roll backed successfully occur in Step30 for the SP  Supertable.dbo.usp_Supertbl_Transactional_History" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Step 40 Get the record count"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task Step 40 Get the record count"
+      DTS:DTSID="{f8be49d5-2cee-43b3-b69b-712d2e4e692b}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Step 40 Get the record count"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Execution Failed &amp; Roll backed successfully occur in " + "Step40 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2a@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="Execution Failed &amp; Roll backed successfully occur in Step40 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Message Source: Problem Getting Record Count..." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Step 45 Get the record count"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task Step 45 Get the record count"
+      DTS:DTSID="{4c89de84-1af2-4ad7-987b-2344ce41d85b}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Step 45 Get the record count"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Execution Failed &amp; Roll backed successfully occur in " + "Step45 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2a@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="Execution Failed &amp; Roll backed successfully occur in Step45 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Message Source: Problem Getting Record Count..." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Step 50 Mark Temp Records to Old"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task Step 50 Mark Temp Records to Old"
+      DTS:DTSID="{40082e70-e75e-4e65-a024-93a3acbf338c}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Step 50 Mark Temp Records to Old"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Execution Failed &amp; Roll backed successfully occur in " + "Step50 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2a@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="Execution Failed &amp; Roll backed successfully occur in Step50 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Message Source: Problem in Marking TemporaryTable Records to Old..." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Step 55 Mark Temp Records to Old"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task Step 55 Mark Temp Records to Old"
+      DTS:DTSID="{5c0c7c82-bb68-4c23-8a98-77c9bbc43bf0}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Step 55 Mark Temp Records to Old"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Execution Failed &amp; Roll backed successfully occur in " + "Step55 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2a@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="Execution Failed &amp; Roll backed successfully occur in Step55 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Message Source: Problem Updating Location_Future_Deleted_flag" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Step 60 Save Last-Hour's Timestampes"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task Step 60 Save Last-Hour's Timestampes"
+      DTS:DTSID="{115a97c2-ab95-4211-8898-71c8c8a054c1}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Step 60 Save Last-Hour's Timestampes"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"Execution Failed &amp; Roll backed successfully occur in " + "Step60 - " + @[$Package::LCGMS_SupertableHourly2_SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{A9094271-2A37-4EB1-9BF4-F372F66F29F6}"
+          SendMailTask:From="SupertableHourlyJob2a@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="Execution Failed &amp; Roll backed successfully occur in Step60 - ES11VdSINFSQL01"
+          SendMailTask:MessageSource="Message Source: Problem Saving Last-Hour's Timestampes..." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Ste50 Update the flag to old"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Ste50 Update the flag to old"
+      DTS:DTSID="{e3fb5a4b-e1ed-4b66-8b3b-5cda84ac752d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ste50 Update the flag to old"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Mark_Processed_To_Old1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step01 Execute SQL Task - Check The Switch"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Step01 Execute SQL Task - Check The Switch"
+      DTS:DTSID="{58BF6F6F-0285-4113-963A-3E917DF6D1BC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step01 Execute SQL Task - Check The Switch"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="SELECT&#x9;TS_Switch AS [User::LCGMS_SupertableHourly2_SwitchKey]&#xA;FROM&#x9;Supertable.dbo.Supertable_IU_TS &#xA;WHERE   TS_Key = '$'&#xA;;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::LCGMS_SupertableHourly2_SwitchKey" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step05 Get Current date &amp; Time"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Step05 Get Current date &amp; Time"
+      DTS:DTSID="{6e4d994a-5212-497d-b375-088007900042}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step05 Get Current date &amp; Time"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Update Supertable.dbo.Supertable_IU_TS &#xA;Set LCGMS_Old_Timestamp&#x9;= LCGMS_New_Timestamp,&#xA;Last_Executed_Date&#x9;= Getdate(),&#xA;LCGMS_New_Timestamp&#x9;= Getdate(),&#xA;TS_Switch&#x9;&#x9;= 1&#xA;Where TS_Key = '$'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step10 Supertable Extract Current Process"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Step10 Supertable Extract Current Process"
+      DTS:DTSID="{f356dea4-7f66-4245-915f-6887266e6ead}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step10 Supertable Extract Current Process"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Extract_Rows_For_Current_FY" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step15 Supertable Extract Next Process"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Step15 Supertable Extract Next Process"
+      DTS:DTSID="{157cca74-fe4f-4c33-b0da-6160575927a1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step15 Supertable Extract Next Process"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Extract_Rows_For_Next_FY" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step25 Execute DeleteRows"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Step25 Execute DeleteRows"
+      DTS:DTSID="{89d0d5f1-0379-4e24-bb5e-1ec68858f290}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step25 Execute DeleteRows"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="EXEC Supertable.dbo.usp_Supertbl_Generate_Delete_Records" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step30 Interactive Transactional History"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Step30 Interactive Transactional History"
+      DTS:DTSID="{51881b7f-30a3-4c62-9ee2-e20a7782d0cf}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step30 Interactive Transactional History"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Transactional_History" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step35 Supertable Update Process"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Step35 Supertable Update Process"
+      DTS:DTSID="{539918dd-97be-4a53-8466-43313969f3aa}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step35 Supertable Update Process"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Update_Process1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step40 Get the record count"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Step40 Get the record count"
+      DTS:DTSID="{6d92e920-cbdd-4d78-8d8e-c89433d571a9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step40 Get the record count"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Select count(*) AS [User::LCGMS_SupertableHourly2_NumberOfRecords] &#xA;From Supertable.dbo.Supertable_Storage_Staging&#xA;Where SQL1_Upload = 'N'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::LCGMS_SupertableHourly2_NumberOfRecords" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step45 Generate List For Email"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B1B38647-5DB9-4645-A814-204E5E7053F8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step45 Generate List For Email"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Step45 Generate List For Email\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Step45 Generate List For Email\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LCGMS_SupertableHourly2_FlatFileConnectionManager1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LCGMS_SupertableHourly2_FlatFileConnectionManager1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Step45 Generate List For Email\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Step45 Generate List For Email\Flat File Destination.Inputs[Flat File Destination Input].Columns[ALLFileData]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="31"
+                      cachedName="ALLFileData"
+                      externalMetadataColumnId="Package\Step45 Generate List For Email\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ALLFileData]"
+                      lineageId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Output].Columns[ALLFileData]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Step45 Generate List For Email\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ALLFileData]"
+                      codePage="1252"
+                      dataType="str"
+                      length="31"
+                      name="ALLFileData" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Step45 Generate List For Email\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Exec Supertable.dbo.usp_Supertbl_Get_Output_String</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Step45 Generate List For Email\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PROJ_Supertabe_Database_ConnectionString]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Output].Columns[ALLFileData]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ALLFileData]"
+                      length="31"
+                      lineageId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Output].Columns[ALLFileData]"
+                      name="ALLFileData"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ALLFileData]"
+                      codePage="1252"
+                      dataType="str"
+                      length="31"
+                      name="ALLFileData" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ALLFileData]"
+                      codePage="1252"
+                      dataType="str"
+                      length="31"
+                      lineageId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ALLFileData]"
+                      name="ALLFileData" />
+                    <outputColumn
+                      refId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Step45 Generate List For Email.Paths[OLE DB Source Output]"
+              endId="Package\Step45 Generate List For Email\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Step45 Generate List For Email\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step55 Update Location_Future_Deleted_flag"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Step55 Update Location_Future_Deleted_flag"
+      DTS:DTSID="{4d06f497-afa1-45c2-94b5-7de229662f79}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step55 Update Location_Future_Deleted_flag"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Set_Location_Future_Deleted_flag" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step60 Save Last-Hour's Timestamp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Step60 Save Last-Hour's Timestamp"
+      DTS:DTSID="{f172b468-eb7b-49f0-9dd9-8f1e53d2ae05}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step60 Save Last-Hour's Timestamp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{929BC352-EAC0-4655-8D05-0FDC4E1A8BC1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="Exec Supertable.dbo.usp_Supertbl_Refresh_Update_Dates1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{305F7934-1309-4978-9B4B-920A05D4C3A0}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::LCGMS_SupertableHourly2_SwitchKey] == 0"
+      DTS:From="Package\Step01 Execute SQL Task - Check The Switch"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Step05 Get Current date &amp; Time" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{63332589-B083-4343-81DD-FE405D9803A7}"
+      DTS:From="Package\Step05 Get Current date &amp; Time"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Step10 Supertable Extract Current Process" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{AAB5C40F-8207-490F-B3F6-170B79690190}"
+      DTS:From="Package\Step55 Update Location_Future_Deleted_flag"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\Step60 Save Last-Hour's Timestamp" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{E2AFE154-8E10-47C9-AA8C-479445DFAC49}"
+      DTS:From="Package\Step01 Execute SQL Task - Check The Switch"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\Send Mail Task Step 01 Problem Reading TS_Switch Process"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
+      DTS:CreationName=""
+      DTS:DTSID="{038B6481-62FC-4B27-A681-91392D5EA187}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::LCGMS_SupertableHourly2_SwitchKey] == 1"
+      DTS:From="Package\Step01 Execute SQL Task - Check The Switch"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 12"
+      DTS:To="Package\Send Mail Task Step 01 - System is previously busy &amp; Successfully Exit Out" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
+      DTS:CreationName=""
+      DTS:DTSID="{7F45F080-1335-425A-8204-5FF18BFA5E1A}"
+      DTS:From="Package\Step10 Supertable Extract Current Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 13"
+      DTS:To="Package\Execute SQL ROLLBACK Step10"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 14]"
+      DTS:CreationName=""
+      DTS:DTSID="{83699975-1ACB-4EC2-AA85-9C29ED2415EF}"
+      DTS:From="Package\Step15 Supertable Extract Next Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 14"
+      DTS:To="Package\Execute SQL ROLLBACK Step15"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 15]"
+      DTS:CreationName=""
+      DTS:DTSID="{5F6C13FF-8C93-440B-8263-13C4C9D15F9C}"
+      DTS:From="Package\Step25 Execute DeleteRows"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 15"
+      DTS:To="Package\Execute SQL ROLLBACK Step25"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 16]"
+      DTS:CreationName=""
+      DTS:DTSID="{97F00F9D-AE9D-4849-A7A9-B86E93A58C87}"
+      DTS:From="Package\Step30 Interactive Transactional History"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 16"
+      DTS:To="Package\Execute SQL ROLLBACK Step30"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 17]"
+      DTS:CreationName=""
+      DTS:DTSID="{E00FC226-4254-4068-8B68-71B68F585538}"
+      DTS:From="Package\Step35 Supertable Update Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 17"
+      DTS:To="Package\Execute SQL ROLLBACK Step35"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 18]"
+      DTS:CreationName=""
+      DTS:DTSID="{B1726B86-D7CD-46E0-AF2E-A61FC203B810}"
+      DTS:From="Package\Step40 Get the record count"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 18"
+      DTS:To="Package\Execute SQL ROLLBACK Step40"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 19]"
+      DTS:CreationName=""
+      DTS:DTSID="{C6EA0252-17A8-4DB7-80F8-9F2B479E4BCF}"
+      DTS:From="Package\Step45 Generate List For Email"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 19"
+      DTS:To="Package\Execute SQL ROLLBACK Step45"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9A31DD51-8622-4927-A11E-9492198A35DF}"
+      DTS:From="Package\Step10 Supertable Extract Current Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Step15 Supertable Extract Next Process" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 20]"
+      DTS:CreationName=""
+      DTS:DTSID="{F2B4699A-C412-4F2B-8373-BB1ADAC86BE2}"
+      DTS:From="Package\Ste50 Update the flag to old"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 20"
+      DTS:To="Package\Execute SQL ROLLBACK Step50"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 21]"
+      DTS:CreationName=""
+      DTS:DTSID="{266DB147-29A2-4868-9D28-3A7483724368}"
+      DTS:From="Package\Step55 Update Location_Future_Deleted_flag"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 21"
+      DTS:To="Package\Execute SQL ROLLBACK Step55"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 22]"
+      DTS:CreationName=""
+      DTS:DTSID="{8145FDCB-B680-4E7A-9FA6-E5FA7C03A2D9}"
+      DTS:From="Package\Step60 Save Last-Hour's Timestamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 22"
+      DTS:To="Package\Execute SQL ROLLBACK Step60"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 23]"
+      DTS:CreationName=""
+      DTS:DTSID="{D8A1DDD4-1883-4655-8DF7-C4A4F474B565}"
+      DTS:From="Package\Execute SQL ROLLBACK Step10"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 23"
+      DTS:To="Package\Send Mail Task Step 10 Problem In Supertable Current Extract Process"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 24]"
+      DTS:CreationName=""
+      DTS:DTSID="{85539EFF-BD90-439F-949E-E637E8C7BDE0}"
+      DTS:From="Package\Execute SQL ROLLBACK Step15"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 24"
+      DTS:To="Package\Send Mail Task Step 15 Problem In Supertable Extract Next Process"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 25]"
+      DTS:CreationName=""
+      DTS:DTSID="{15F325B7-D8B5-41A7-AF38-8BFE88E2F680}"
+      DTS:From="Package\Execute SQL ROLLBACK Step25"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 25"
+      DTS:To="Package\Send Mail Task Step 25 Problem Execute Delete Rows"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 26]"
+      DTS:CreationName=""
+      DTS:DTSID="{83E36973-63B8-45A7-86C2-2DBDB5949F60}"
+      DTS:From="Package\Execute SQL ROLLBACK Step30"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 26"
+      DTS:To="Package\Send Mail Task Step 30 Problem In Supertable Extract Process"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 27]"
+      DTS:CreationName=""
+      DTS:DTSID="{545116A1-A253-4C0A-BC05-16F1F2ECB20D}"
+      DTS:From="Package\Execute SQL ROLLBACK Step35"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 27"
+      DTS:To="Package\Send Email Task Step 35 Failed Update Process Message"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 28]"
+      DTS:CreationName=""
+      DTS:DTSID="{6A34A146-5EEF-44B5-9790-A6B37BBD610A}"
+      DTS:From="Package\Execute SQL ROLLBACK Step40"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 28"
+      DTS:To="Package\Send Mail Task Step 40 Get the record count"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 29]"
+      DTS:CreationName=""
+      DTS:DTSID="{CA91CF6D-41A7-4427-9E56-943457EE6077}"
+      DTS:From="Package\Execute SQL ROLLBACK Step45"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 29"
+      DTS:To="Package\Send Mail Task Step 45 Get the record count"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{97CA006C-B8EF-4BC3-8F03-1F2A73FAAA0F}"
+      DTS:From="Package\Step15 Supertable Extract Next Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Step25 Execute DeleteRows" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 30]"
+      DTS:CreationName=""
+      DTS:DTSID="{D75AE9AD-1E12-466D-BE6D-CE7FE677ADBD}"
+      DTS:From="Package\Execute SQL ROLLBACK Step50"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 30"
+      DTS:To="Package\Send Mail Task Step 50 Mark Temp Records to Old"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 31]"
+      DTS:CreationName=""
+      DTS:DTSID="{C6588953-A5DD-4171-87A5-3A936CE51164}"
+      DTS:From="Package\Execute SQL ROLLBACK Step55"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 31"
+      DTS:To="Package\Send Mail Task Step 55 Mark Temp Records to Old"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 32]"
+      DTS:CreationName=""
+      DTS:DTSID="{A9AFA27B-FCBD-4739-8BCD-73847CF66274}"
+      DTS:From="Package\Execute SQL ROLLBACK Step60"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 32"
+      DTS:To="Package\Send Mail Task Step 60 Save Last-Hour's Timestampes"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 33]"
+      DTS:CreationName=""
+      DTS:DTSID="{17E6ABAF-B3BF-469A-BAB6-3D89DCA44539}"
+      DTS:From="Package\Step60 Save Last-Hour's Timestamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 33"
+      DTS:To="Package\Final Step Supertables Are Successfully Updated" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{C5BCCAB2-28E9-46E6-9942-84C5B255F1E4}"
+      DTS:From="Package\Step25 Execute DeleteRows"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Step30 Interactive Transactional History" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{A9070214-4D01-4B3E-B817-BABBFEAE6D8C}"
+      DTS:From="Package\Step30 Interactive Transactional History"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Step35 Supertable Update Process" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{4BC96FB0-F0C7-43B3-BDF0-B5F7C0D30A12}"
+      DTS:From="Package\Step35 Supertable Update Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Step40 Get the record count" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{0FF7309A-FA66-4639-97B8-C403A2F1ACCA}"
+      DTS:From="Package\Step40 Get the record count"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Step45 Generate List For Email" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{2CA3326F-1E60-4779-9EE3-C6AEA5C7BB42}"
+      DTS:From="Package\Step45 Generate List For Email"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Ste50 Update the flag to old" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{8EAB31D0-3A39-4F28-8908-98D66063D543}"
+      DTS:From="Package\Ste50 Update the flag to old"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Step55 Update Location_Future_Deleted_flag" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Execute SQL ROLLBACK Step10"
+          TopLeft="581,281" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Execute SQL ROLLBACK Step15"
+          TopLeft="581,353" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Execute SQL ROLLBACK Step25"
+          TopLeft="581,425" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Execute SQL ROLLBACK Step30"
+          TopLeft="581,497" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Execute SQL ROLLBACK Step35"
+          TopLeft="581,569" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Execute SQL ROLLBACK Step40"
+          TopLeft="581,641" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Execute SQL ROLLBACK Step45"
+          TopLeft="581,713" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Execute SQL ROLLBACK Step50"
+          TopLeft="581,785" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Execute SQL ROLLBACK Step55"
+          TopLeft="581,857" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Execute SQL ROLLBACK Step60"
+          TopLeft="580,930" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Final Step Supertables Are Successfully Updated"
+          TopLeft="212,1003" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Send Email Task Step 35 Failed Update Process Message"
+          TopLeft="930,568.714285714286" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Send Mail Task Step 01 - System is previously busy &amp; Successfully Exit Out"
+          TopLeft="581,209" />
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Send Mail Task Step 01 Problem Reading TS_Switch Process"
+          TopLeft="581,137" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Send Mail Task Step 10 Problem In Supertable Current Extract Process"
+          TopLeft="930,283" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Send Mail Task Step 15 Problem In Supertable Extract Next Process"
+          TopLeft="930,354.428571428571" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Send Mail Task Step 25 Problem Execute Delete Rows"
+          TopLeft="930,425.857142857143" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Send Mail Task Step 30 Problem In Supertable Extract Process"
+          TopLeft="932,497.285714285714" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Send Mail Task Step 40 Get the record count"
+          TopLeft="930,640.142857142857" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Send Mail Task Step 45 Get the record count"
+          TopLeft="930,711.571428571429" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Send Mail Task Step 50 Mark Temp Records to Old"
+          TopLeft="930,783" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Send Mail Task Step 55 Mark Temp Records to Old"
+          TopLeft="930,856" />
+        <NodeLayout
+          Size="293,42"
+          Id="Package\Send Mail Task Step 60 Save Last-Hour's Timestampes"
+          TopLeft="930,926" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Ste50 Update the flag to old"
+          TopLeft="212,788" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Step01 Execute SQL Task - Check The Switch"
+          TopLeft="212,143" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Step05 Get Current date &amp; Time"
+          TopLeft="212,214.666666666667" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Step10 Supertable Extract Current Process"
+          TopLeft="212,286.333333333333" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Step15 Supertable Extract Next Process"
+          TopLeft="212,358" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Step25 Execute DeleteRows"
+          TopLeft="212,429.666666666667" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Step30 Interactive Transactional History"
+          TopLeft="212,501.333333333333" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Step35 Supertable Update Process"
+          TopLeft="212,573" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Step40 Get the record count"
+          TopLeft="212,644.666666666667" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Step45 Generate List For Email"
+          TopLeft="212,716.333333333333" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Step55 Update Location_Future_Deleted_flag"
+          TopLeft="212,859.666666666667" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Step60 Save Last-Hour's Timestamp"
+          TopLeft="212,931.333333333333" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="311.666666666667,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.8333333333334,29.6666666666667"
+              Start="0,0"
+              End="47.8333333333334,22.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.96268824454933" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.96268824454933"
+                    Point2="0,11.9626882445493"
+                    Point3="4,11.9626882445493" />
+                  <mssgle:LineSegment
+                    End="43.8333333333334,11.9626882445493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.8333333333334,11.9626882445493"
+                    Point2="47.8333333333334,11.9626882445493"
+                    Point3="47.8333333333334,15.9626882445493" />
+                  <mssgle:LineSegment
+                    End="47.8333333333334,22.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="15.9166666666667,16.9626882445493,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="359.5,256.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6666666666667"
+              Start="0,0"
+              End="0,22.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="359.5,901.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6666666666666"
+              Start="0,0"
+              End="0,22.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="507,161">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.00865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="407.333333333333,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="305.666666666667,24"
+              Start="0,0"
+              End="305.666666666667,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,5.67768037761295" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,5.67768037761295"
+                    Point2="0,9.67768037761295"
+                    Point3="4,9.67768037761295" />
+                  <mssgle:LineSegment
+                    End="301.666666666667,9.67768037761295" />
+                  <mssgle:CubicBezierSegment
+                    Point1="301.666666666667,9.67768037761295"
+                    Point2="305.666666666667,9.67768037761295"
+                    Point3="305.666666666667,13.6776803776129" />
+                  <mssgle:LineSegment
+                    End="305.666666666667,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="144.833333333333,14.6776803776129,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="507,304.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.00865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 14]"
+          TopLeft="507,376.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.00865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 15]"
+          TopLeft="507,448.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.00865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 16]"
+          TopLeft="507,520.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.00865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 17]"
+          TopLeft="507,592">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.00865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 18]"
+          TopLeft="507,663.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.00865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 19]"
+          TopLeft="507,735.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.00865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="359.5,328.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6666666666667"
+              Start="0,0"
+              End="0,22.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 20]"
+          TopLeft="507,807.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.00865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 21]"
+          TopLeft="507,879.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.00865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 22]"
+          TopLeft="507,951.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73,0"
+              Start="0,0"
+              End="65.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="65.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="17.50865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 23]"
+          TopLeft="845,303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85,0"
+              Start="0,0"
+              End="77.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.445546875,5,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 24]"
+          TopLeft="845,374.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85,0"
+              Start="0,0"
+              End="77.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.445546875,5,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 25]"
+          TopLeft="845,446.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85,0"
+              Start="0,0"
+              End="77.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.445546875,5,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 26]"
+          TopLeft="845,518.142857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87,0"
+              Start="0,0"
+              End="79.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="79.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="14.445546875,5,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 27]"
+          TopLeft="845,589.857142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85,0"
+              Start="0,0"
+              End="77.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.445546875,5,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 28]"
+          TopLeft="845,661.571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85,0"
+              Start="0,0"
+              End="77.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.445546875,5,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 29]"
+          TopLeft="845,733.285714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85,0"
+              Start="0,0"
+              End="77.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.445546875,5,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="359.5,400">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6666666666667"
+              Start="0,0"
+              End="0,22.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 30]"
+          TopLeft="845,805">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85,0"
+              Start="0,0"
+              End="77.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.445546875,5,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 31]"
+          TopLeft="845,877.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85,0"
+              Start="0,0"
+              End="77.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.445546875,5,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 32]"
+          TopLeft="844,949">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86,0"
+              Start="0,0"
+              End="78.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.945546875,5,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 33]"
+          TopLeft="359.5,973.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6666666666666"
+              Start="0,0"
+              End="0,22.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="359.5,471.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6666666666667"
+              Start="0,0"
+              End="0,22.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="359.5,543.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6666666666666"
+              Start="0,0"
+              End="0,22.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="359.5,615">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6666666666666"
+              Start="0,0"
+              End="0,22.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="359.5,686.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6666666666666"
+              Start="0,0"
+              End="0,22.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="359.5,758.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6666666666666"
+              Start="0,0"
+              End="0,22.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="359.5,830">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6666666666666"
+              Start="0,0"
+              End="0,22.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Environment(s)         - SQL SERVER(s)&#xA;&#xA;LCGMS/Supertable (DEV) - ES11VdSINFSQL01&#xA;LCGMS/Supertable (QA  )  - ES11VqSINFSQL01  &#xA;LCGMS/Supertable (STG) - ES11VsSINFAG02.cstg.nstg.local &#xA;LCGMS/Supertable (PRD) - ES11vSINFAG02,4433 &#xA;&#xA;Email:               DATALoadLCGMS@schools.nyc.gov&#xA;&#xA;Parameter File: LCGMS_SupertableHourly2.xlsx&#xA;&#xA;SSIS Job:          LCGMS_SupertableHourly2"
+          ParentId="Package"
+          Size="332,179"
+          Id="c50ed5fb-cc5a-4150-a96b-ffaf54d98782"
+          TopLeft="872,74">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Times New Roman"
+              Size="11.25"
+              Color="#FF0000FF"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="                                         Supertable Hourly Process with Transactional History&#xA;                                                              Please contact Tahir A. Syed&#xA;This job captures the delta from LCGMS database on an hourly basis &amp; update Supertable(s) in SQL &amp; DB2 &#xA;environments concurrently. It sends email message in both cases of successful or unsuccessful Processes."
+          ParentId="Package"
+          Size="592,79"
+          Id="9f533520-ea1c-47e6-b2e6-fb4c3722ebe4"
+          TopLeft="215,34">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Times New Roman"
+              Size="12"
+              Color="#FFFF0000"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Step45 Generate List For Email">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Step45 Generate List For Email\OLE DB Source"
+          TopLeft="85,41" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Step45 Generate List For Email\Flat File Destination"
+          TopLeft="80,150" />
+        <EdgeLayout
+          Id="Package\Step45 Generate List For Email.Paths[OLE DB Source Output]"
+          TopLeft="164,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Step45 Generate List For Email\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
